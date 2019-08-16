@@ -23,6 +23,11 @@ export default class SignIn  extends Component{
                                         <input type="text" className="form-control " id="passwordInput" placeholder="Password"/>
                                     </div>
                                 </div>
+                                <div className="form-group row ">
+                                    <div className="col-12">
+                                        <input type="submit" value="Sign In" className="form-control btn btn-primary " id="signInButton" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
