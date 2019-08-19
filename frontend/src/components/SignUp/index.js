@@ -35,14 +35,15 @@ export default class SignUp  extends Component{
         }
 
         axios.post('http://localhost:5000/users/add', user)
-            .then( res => console.log(res.data));
+            .then( res => console.log(res.data))
+            .catch(e => console.log(e));
 
-            this.setState={
+            this.setState({
                 firstName: '',
                 lastName: '',
                 email: '',
                 password: '',
-            }
+            });
         //window.location = '/';
     }
 
@@ -86,7 +87,7 @@ export default class SignUp  extends Component{
                                 <div className="form-group row">
                                     <i className="fa fa-lock fa-2x col-2" aria-hidden="true"></i>
                                     <div className="col-10">
-                                        <input type="text" className="form-control " name ="password" id="passwordInput" placeholder="Password"
+                                        <input type="password" className="form-control " name ="password" id="passwordInput" placeholder="Password"
                                         required
                                         value = {this.state.password}
                                         onChange={this.onChangeHandler}

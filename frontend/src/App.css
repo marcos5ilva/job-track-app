@@ -35,6 +35,21 @@ html, body, #root {
   color: #61dafb;
 }
 
+.Container{
+  padding: 0 15px;
+  height: 100%;
+  flex: 0 0 320px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 320px;
+}
+
+.board{
+  display: flex;
+  padding: 30px 0;
+  height: calc(100%-80px);
+}
+
 .verticalAlignment{
   margin: 0;
   position: absolute;
@@ -49,6 +64,30 @@ html, body, #root {
   padding-right: 5%;
   padding-top:10%;
   padding-bottom:10%;
+}
+
+.list{
+  padding: 0 15px;
+  height: 100%;
+  flex:0 0 320;
+  border-left: 1px solid rgba(0,0,0,0.05);
+  /*& + div{
+    border-left: 1px solid rgba(0,0,0,0.05);
+  }*/
+
+}
+
+.list button{
+  width: 42px;
+  height:42px;
+  border-radius: 18px;
+  background: #3b5bfd;
+  border: 0;
+  cursor: pointer;
+}
+
+.list ul{
+  margin-top: 30px;
 }
 
 

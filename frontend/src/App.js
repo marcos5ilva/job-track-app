@@ -14,6 +14,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
+import Board from './components/Board';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ export default class App extends React.Component {
             <Route path="/" component = {HomePage} exact/>
             <Route path="/signup" component = {SignUp}/>
             <Route path="/signin" component = {SignIn}/>
+            <Route path="/board" component = {Board}/>
             <Route path="/about" component = {AboutPage} />
           </div>
         </Router>

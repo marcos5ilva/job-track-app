@@ -1,8 +1,26 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import { directive } from '@babel/types';
+import axios from 'axios';
 
 export default class SignIn  extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = {user: []};
+
+    }
+
+    componentDidMount(){
+        axios.get('http://localhost:5000/users/signin')
+            .then( response => {
+                this.setState({ user: response.data});
+            })
+            .catch(error =>{
+                console.log(error);
+
+            })
+    }
 
     render(){
         return (
