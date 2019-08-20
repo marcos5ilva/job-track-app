@@ -1,22 +1,35 @@
 import React, {Component} from 'react';
+import { useDrag } from 'react-dnd';
 
 
 
-export default class List extends Component{
-    constructor (props){
-        super(props);
-    }
+export default function Card ({data}){
 
-    render(){
+
+    
+        const [{ isDragging }, dragRef] = useDrag({
+            item: {type: 'CARD'},
+            collect: monitor =>({isDragging: monitor.isDragging()})
+        });
+
+    
+
+ 
+    
+    
+
+        
+    
+
         return (
-            <div className="Container">
-               <div class="card">
-                <div class="card-body">
+            <div className="Container" ref={dragRef}>
+               <div className="card cards">
+                <div className="card-body">
                     This is some text within a card body.
                     
                 </div>
                 </div>
             </div>
         )
-    }
+    
 }

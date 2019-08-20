@@ -14,7 +14,7 @@ export default class List extends Component{
                 <header>
                     <h2>Searching</h2>
                     <button type ="button">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <i className="fa fa-plus" aria-hidden="true"></i>
                     </button>
                 </header>
                 <ul>

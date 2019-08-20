@@ -15,6 +15,7 @@ export default class SignIn  extends Component{
         axios.get('http://localhost:5000/users/signin')
             .then( response => {
                 this.setState({ user: response.data});
+              
             })
             .catch(error =>{
                 console.log(error);

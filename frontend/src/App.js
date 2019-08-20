@@ -8,6 +8,8 @@ import {
   Route,
 } from 'react-router-dom';
 
+import {DndProvider} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 //Import components
 import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage';
@@ -23,16 +25,18 @@ export default class App extends React.Component {
   
   render (){
       return (
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route path="/" component = {HomePage} exact/>
-            <Route path="/signup" component = {SignUp}/>
-            <Route path="/signin" component = {SignIn}/>
-            <Route path="/board" component = {Board}/>
-            <Route path="/about" component = {AboutPage} />
-          </div>
-        </Router>
+        <DndProvider backend={HTML5Backend}>
+          <Router>
+            <div className="App">
+              <Navbar />
+              <Route path="/" component = {HomePage} exact/>
+              <Route path="/signup" component = {SignUp}/>
+              <Route path="/signin" component = {SignIn}/>
+              <Route path="/board" component = {Board} exact/>
+              <Route path="/about" component = {AboutPage} />
+            </div>
+          </Router>
+        </DndProvider>
     
       );
     }

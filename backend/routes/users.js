@@ -3,11 +3,13 @@ const bcrypt = require ('bcrypt');
 const User = require('../models/user.model');
 
 
-router.route('/').get((req, res) =>{
+router.route('/').post((req, res) =>{
     User.find()
         .then(users=> res.json(users))
         .catch(err => res.status(400).json('Error: '+ err));       
 })
+
+
 
 router.route('/signin').post(async (req, res)=> {
     
@@ -15,18 +17,17 @@ router.route('/signin').post(async (req, res)=> {
     
     const user = await User.findOne({ email }).select('+password');
     const isMatch = !await bcrypt.compare(password, user.password);
-    console.log("typed password : "+password);
-    console.log("retrieved encrypted user.password : "+user.password);
-    console.log(isMatch);
+   
         if(!user)
             return res.status(400).send({error: 'User not found'});
             
             
         if(!isMatch)
             return res.status(400).send({error: 'Wrong password'});
-        
+           
         res.send({user});
-        res.redirect('/board');
+        //res.redirect(303, '/board' + querystring.stringify({user}));;
+        
             
   
  
