@@ -3,25 +3,24 @@ import Card from '../Card';
 
 
 
-export default function List ({data}){
+export default function List ({data, index: listIndex}){
  
 
     
-        return (
-            <div className="Container list">
-                <header>
-                    <h2>{data.title}</h2>
-                    {data.creatable && (<button type ="button">
-                    <i className="fa fa-plus" aria-hidden="true"></i>
-                    </button>)}
+    return (
+        <div className="Container list">
+            <header>
+                <h2>{data.title}</h2>
+                {data.creatable && (<button type ="button">
+                 <i className="fa fa-plus" aria-hidden="true"></i>
+                </button>)}
                     
-                </header>
+            </header>
+            <ul>
+                {data.cards.map((card, index) => <Card key={card.id} listIndex= {listIndex} index={index} data={card}/>)}
+            </ul>
                 
-                <ul>
-                  {data.cards.map(card => <Card key={card.id} data={card}/>)}
-                </ul>
-                
-            </div>
-        );
+        </div>
+    );
     
 }
