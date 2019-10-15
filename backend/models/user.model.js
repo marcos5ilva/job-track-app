@@ -39,7 +39,7 @@ const userSchema = new Schema({
 
 userSchema.statics.findByCredentials = async (email, password)=>{
     console.log('findByCredentials function');
-    console.log(email)
+    console.log(email);
     const user = await User.findOne({email}).select('+password');
     console.log(user)
     

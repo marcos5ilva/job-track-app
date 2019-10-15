@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require ('bcrypt');
-const User = require('../models/user.model');
+let User = require('../models/user.model');
 
 
 router.route('/').post((req, res) =>{
@@ -12,10 +12,14 @@ router.route('/').post((req, res) =>{
 
 
 router.route('/signin').post(async (req, res)=> {
-    
+    console.log('sign in...');
+  
     const {email, password} = req.body;
+    console.log('email '+email);
+   
     
     const user = await User.findOne({ email }).select('+password');
+    
     const isMatch = !await bcrypt.compare(password, user.password);
    
         if(!user)
@@ -26,6 +30,7 @@ router.route('/signin').post(async (req, res)=> {
             return res.status(400).send({error: 'Wrong password'});
            
         res.send({user});
+        console.log('user found')
         //res.redirect(303, '/board' + querystring.stringify({user}));;
         
             

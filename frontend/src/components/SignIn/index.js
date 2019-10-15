@@ -1,24 +1,53 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import { directive } from '@babel/types';
+import { directive, thisExpression } from '@babel/types';
 import axios from 'axios';
 
 export default class SignIn  extends Component{
     constructor(props){
         super(props);
 
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onChangeHandler = this.onChangeHandler.bind(this);
         this.state = {user: []};
 
     }
 
-    componentDidMount(){
-        axios.get('http://localhost:5000/users/signin')
+    //  componentDidMount(){
+    //      axios.post('http://localhost:5000/users/signin')
+    //          .then( response => {
+    //              this.setState({ user: response.data});
+    //          })
+    //          .catch(error =>{
+    //              console.log(error);
+
+    //          })
+    // }
+
+    onChangeHandler(e){
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    onSubmit(e){
+       // e.preventDefault();
+        console.log(e);
+        console.log("teste");
+        const user = {
+            email: this.state.email,
+            password: this.state.password,
+        }
+
+       
+
+        axios.post('http://localhost:5000/users/signin', user)
             .then( response => {
                 this.setState({ user: response.data});
               
             })
-            .catch(error =>{
-                console.log(error);
+            .catch(e =>{
+                console.log(e);
 
             })
     }
@@ -33,13 +62,21 @@ export default class SignIn  extends Component{
                                 <div className="form-group row">
                                     <i className="fa fa-envelope fa-2x col-2" aria-hidden="true"></i>
                                     <div className="col-10">
-                                        <input type="text" className="form-control " id="lastNameInput" placeholder="Email"/>
+                                        <input type="text" className="form-control " id="lastNameInput" placeholder="Email"
+                                        required
+                                        value = {this.state.email}
+                                        onChange={this.onChangeHandler}
+                                        />
                                     </div>
                                 </div>
                                 <div className="form-group row">
                                     <i className="fa fa-lock fa-2x col-2" aria-hidden="true"></i>
                                     <div className="col-10">
-                                        <input type="text" className="form-control " id="passwordInput" placeholder="Password"/>
+                                        <input type="text" className="form-control " id="passwordInput" placeholder="Password"
+                                        required
+                                        value = {this.state.password}
+                                        onChange={this.onChangeHandler}
+                                        />
                                     </div>
                                 </div>
                                 <div className="form-group row ">
