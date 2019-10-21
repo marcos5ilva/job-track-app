@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import { directive, thisExpression } from '@babel/types';
 import axios from 'axios';
 
@@ -9,7 +9,11 @@ export default class SignIn  extends Component{
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeHandler = this.onChangeHandler.bind(this);
-        this.state = {user: []};
+            this.state = {
+            email:'',
+            password:'',   
+        };
+
 
     }
 
@@ -31,9 +35,10 @@ export default class SignIn  extends Component{
     }
 
     onSubmit(e){
-       // e.preventDefault();
+       e.preventDefault();
         console.log(e);
         console.log("teste");
+        console.log(this.state.email);
         const user = {
             email: this.state.email,
             password: this.state.password,
@@ -42,8 +47,10 @@ export default class SignIn  extends Component{
        
 
         axios.post('http://localhost:5000/users/signin', user)
-            .then( response => {
-                this.setState({ user: response.data});
+            .then( res => {
+                console.log(res.data);
+                //this.setState({ user: response.data});
+                this.props.history.push('/board');
               
             })
             .catch(e =>{
@@ -62,7 +69,7 @@ export default class SignIn  extends Component{
                                 <div className="form-group row">
                                     <i className="fa fa-envelope fa-2x col-2" aria-hidden="true"></i>
                                     <div className="col-10">
-                                        <input type="text" className="form-control " id="lastNameInput" placeholder="Email"
+                                        <input type="text" className="form-control " name = 'email' id="emailInput" placeholder="Email"
                                         required
                                         value = {this.state.email}
                                         onChange={this.onChangeHandler}
@@ -72,7 +79,7 @@ export default class SignIn  extends Component{
                                 <div className="form-group row">
                                     <i className="fa fa-lock fa-2x col-2" aria-hidden="true"></i>
                                     <div className="col-10">
-                                        <input type="text" className="form-control " id="passwordInput" placeholder="Password"
+                                        <input type="text" className="form-control " name= "password" id="passwordInput" placeholder="Password"
                                         required
                                         value = {this.state.password}
                                         onChange={this.onChangeHandler}
@@ -81,7 +88,9 @@ export default class SignIn  extends Component{
                                 </div>
                                 <div className="form-group row ">
                                     <div className="col-12">
-                                        <input type="submit" value="Sign In" className="form-control btn btn-primary " id="signInButton" />
+                                        <input type="submit" value="Sign In" className="form-control btn btn-primary " id="signInButton" 
+                                        onClick={(e) => this.onSubmit(e)}
+                                        />
                                     </div>
                                 </div>
                             </div>
