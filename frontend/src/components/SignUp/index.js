@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-import { directive, thisExpression } from '@babel/types';
+
 
 export default class SignUp  extends Component{
     constructor(props){

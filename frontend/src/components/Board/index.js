@@ -1,11 +1,14 @@
-import React, {Component, useState} from 'react';
+import React, { useState} from 'react';
 import {loadLists} from '../../services/api';
 import List from '../List';
 import BoardContext from './context';
 import produce from 'immer';
-import {Link} from 'react-router-dom';
+
 
 const data = loadLists();
+
+console.log(data[0].cards);
+console.log(data[0].cards[1]);
 
 export default function Board(){
 

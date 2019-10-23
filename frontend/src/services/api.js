@@ -1,5 +1,5 @@
 export function loadLists(){
-    return[
+    return [
         {
             title: 'Wish',
             creatable: true,

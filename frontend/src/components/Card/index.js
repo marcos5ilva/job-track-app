@@ -1,7 +1,7 @@
-import React, {Component, useRef, useContext} from 'react';
+import React, { useRef, useContext} from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import BoardContext from '../Board/context';
-import Board from '../Board';
+
 
 
 

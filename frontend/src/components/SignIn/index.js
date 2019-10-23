@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import { directive, thisExpression } from '@babel/types';
 import axios from 'axios';
 
 export default class SignIn  extends Component{
