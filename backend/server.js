@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const usersRouter = require('./routes/users');
+const boardRouter = require('./routes/board');
 const database = require('./database');
 
 require('dotenv').config();
@@ -21,6 +22,7 @@ connection.once('open',  ()=>{
 
 
 app.use('/users', usersRouter);
+app.use('/board', boardRouter);
 
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)
