@@ -31,10 +31,7 @@ router.route('/signin').post(async (req, res)=> {
            
         res.send({user});
         console.log('user found')
-        //res.redirect(303, '/board' + querystring.stringify({user}));;
-        
-            
-  
+        //res.redirect(303, '/board' + querystring.stringify({user}));;         
  
 })
 
