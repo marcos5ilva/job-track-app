@@ -4,45 +4,46 @@ const Schema = mongoose.Schema;
 
 
 
-const labelsSchema = new Schema({
-    labels: String,
+//  cardsSchema = new Schema ({
+//      id: {
+//          type: Number,
+//          required: false,
+//      },
+//      content:{
+//          type: String,
+//      },
+//      labels:String,
 
-}); 
+//      user: {
+//          type: String,
 
- cardsSchema = new Schema ({
-     id: {
-         type: Number,
-         required: true,
-     },
-     content:{
-         type: String,
-     },
-     labels:String,
+//      }
 
-     user: {
-         type: String,
-
-     }
-
- });
+//  });
 
  
- const listSchema =  new Schema({
+//  const listSchema =  new Schema({
 
-    title :{
-        type: String,
-         required: true,  
-     },
+//     title :{
+//         type: String,
+//          required: true,  
+//      },
 
-    creatable: {
-         type: Boolean,
-     },
+//     creatable: {
+//          type: Boolean,
+//      },
 
-     cards: [cardsSchema]
- });
+//      cards: [cardsSchema]
+//  });
 
  const boardSchema = new Schema({
-    board: [listSchema]
+    //lists: [listSchema]
+    title: String,
+    description: String,
+    lists: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Lists',
+    }],
 });
 
 const Board = mongoose.model('Board', boardSchema);
