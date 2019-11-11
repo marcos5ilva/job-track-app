@@ -94,10 +94,6 @@ router.route('/delete').delete(async (req, res)=>{
         console.log('initializing delete')
         const board = await Board.findById(req.body.idBoard)
         
-        console.log(board);
-        console.log(req.body.idBoard);
-        console.log(req.body.idList);
-        console.log(req.body.idCard);
         //if(!board){
           //  return res.status(404).send();
        // }

@@ -38,9 +38,22 @@ router.route('/add/:id').patch(async (req, res)=>{
         await list.save();
         res.send(list);
     }catch(e){
+
         return res.status(400).send({Error: 'Error creating new card'})
-        console.log(e);
+    
     }
+})
+
+router.route('/:id').delete(async (req, res)=>{
+    try{
+       
+       await Cards.findByIdAndDelete(req.params.id);
+       res.send('Card deleted');
+
+    }catch(e){
+        res.status(400).send({Error: 'Error removing card'})
+    }
+    
 })
 
 module.exports = router;

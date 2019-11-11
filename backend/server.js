@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const usersRouter = require('./routes/users');
 const boardRouter = require('./routes/board');
+const listsRouter = require('./routes/lists');
 const cardsRouter=require('./routes/cards');
 const database = require('./database');
 
@@ -20,9 +21,9 @@ connection.once('open',  ()=>{
     console.log("MongoDB database connection established successfully ")
 })
 
-
-app.use('/board', boardRouter);
 app.use('/users', usersRouter);
+app.use('/board', boardRouter);
+app.use('/lists', listsRouter);
 app.use('/cards', cardsRouter);
 
 
