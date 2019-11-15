@@ -3,11 +3,23 @@ const Schema = mongoose.Schema;
 
 cardsSchema = new Schema ({
 
-    title: {
+    companyName: {
         type: String,
         required: true,
     },
-    content:{
+    jobTitle: {
+        type: String,
+        
+    },
+    salary: {
+        type: String,
+        
+    },
+    jobPostURL: {
+        type: String,
+        
+    },
+    note:{
         type: String,
     },
     labels:String,

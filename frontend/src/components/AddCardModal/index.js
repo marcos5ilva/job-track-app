@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Modal, Button, Form} from 'react-bootstrap';
+import axios from 'axios';
 
 export default class AddCardModal extends Component {
    
@@ -31,13 +32,17 @@ export default class AddCardModal extends Component {
 
   onSubmit(e){
     e.preventDefault();
-    const card = {
+    const card = { cards :[{
       companyName: this.state.companyName,
       jobTitle: this.state.jobTitle,
       salary: this.state.salary,
-      jobPostURL: this.state.postURL,
+      jobPostURL: this.state.jobPostURL,
       note: this.state.note,
-    }
+    }]}
+
+    axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',card)
+    .then(res => console.log(res.data))
+    .catch(e => console.log(e));
 
     console.log('new card  added:')
     console.log(card);

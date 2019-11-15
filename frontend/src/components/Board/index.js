@@ -6,43 +6,34 @@ import produce from 'immer';
 import axios from 'axios';
 
 
-
-
-
-
-
-//const data = loadLists();
+const data = loadLists();
 
 
 export default function Board(){
     
-  //const [lists,setLists] = useState(data);
-
-  //console.log(data[0].cards);
-  //console.log(data[0].cards[1]);
+  const [lists,setLists] = useState(data);
 
    
-    
+  // const [lists,setLists] = useState([]);
 
-   useEffect(() => {
-     axios.get('http://localhost:5000/lists')
-   .then(res => {
-     setLists(res.data.lists)
-   })
-   .catch(e =>{
-     console.log(e)
-   })
+  //  useEffect(() => {
+  //     axios.get('http://localhost:5000/lists')
+  //     .then(res => {
+  //       setLists(res.data.lists)
+  //     })
+  //   .catch(e =>{
+  //     console.log(e)
+  //   })
   
-   })
+  //  })
 
-   const [lists,setLists] = useState([]);
-
-    console.log('Lists after: ')
-    console.log(lists);
-    //console.log(lists[0].cards);
 
    
     function move(fromList, toList, from, to){
+        console.log('fromList: '+ fromList);
+        console.log('toList: '+ toList);
+        console.log('from: '+ to);
+
         setLists(produce(lists, draft =>{
             const dragged = draft[fromList].cards[from];
 
@@ -52,6 +43,7 @@ export default function Board(){
      }
     return (
         <BoardContext.Provider value={{lists, move}}>
+            {console.log('lists: '+lists)}
              <div className="Container board">
             {lists.map((list, index) =><List key={list.title} index = {index}  data={list}/>)}
         </div>
@@ -59,23 +51,3 @@ export default function Board(){
        
     ) 
 }
-// export default class Board extends Component{
-
-//     constructor(props){
-//         super(props);
-
-//        this.lists = loadLists();
-
-//     }
-
-//     render(){
-//         const [lists, setLists] = useState(this.lists);
-//         return (
-//             <div className="Container board">
-//                 {this.lists.map(list =><List key={list.title} data={list}/>)}
-              
-
-//             </div>
-//         )
-//     }
-// }
