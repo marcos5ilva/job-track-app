@@ -6,7 +6,7 @@ let Cards = require('../models/cards.model');
 router.route('/').get( async(req, res)=>{
     try{
 
-        const lists = await Lists.find();
+        const lists = await Lists.find().populate('cards');
         return res.send({lists});
 
     } catch(e){

@@ -18,9 +18,11 @@ router.route('/').get(async (req, res)=>{
 router.route('/add/:id').patch(async (req, res)=>{
     try{
         console.log('Creating new card')
+        console.log('List param.id '+req.params.id);
         const {cards} = req.body;
-        const list = await Lists.findOneAndUpdate(req.params.id, { new: true, runValidators: true }) 
-
+        const list = await Lists.findByIdAndUpdate(req.params.id, { new: true, runValidators: true }) 
+        console.log('List param.id '+req.params.id);
+        console.log('list to be updated: '+ list);
         console.log(list);
         if(!list){
             return res.status(404).send()
