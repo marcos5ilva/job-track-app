@@ -6,28 +6,29 @@ import produce from 'immer';
 import axios from 'axios';
 
 
-const data = loadLists();
+//const data = loadLists();
 
 
 export default function Board(){
     
-  const [lists,setLists] = useState(data);
+ // const [lists,setLists] = useState(data);
 
    
-  // const [lists,setLists] = useState([]);
+   const [lists,setLists] = useState([]);
 
-  //  useEffect(() => {
-  //     axios.get('http://localhost:5000/lists')
-  //     .then(res => {
-  //       setLists(res.data.lists)
-  //     })
-  //   .catch(e =>{
-  //     console.log(e)
-  //   })
-  
-  //  })
+    useEffect(() => {
+        
+       axios.get('http://localhost:5000/lists')
+       .then(res => {
+         setLists(res.data.lists);
+       })
+     .catch(e =>{
+       console.log(e)
+     })
+       
+    },[lists.cards])
 
-
+console.log(lists)
    
     function move(fromList, toList, from, to){
         console.log('fromList: '+ fromList);
@@ -41,9 +42,10 @@ export default function Board(){
              draft[toList].cards.splice(to, 0,dragged);
          }))
      }
+
     return (
         <BoardContext.Provider value={{lists, move}}>
-            {console.log('lists: '+lists)}
+           
              <div className="Container board">
             {lists.map((list, index) =><List key={list.title} index = {index}  data={list}/>)}
         </div>

@@ -1,6 +1,8 @@
 import React, { useRef, useContext} from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import BoardContext from '../Board/context';
+import { ButtonToolbar, Button } from 'react-bootstrap';
+import axios from 'axios';
 
 
 
@@ -57,13 +59,24 @@ export default function Card ({data, index, listIndex}){
 
     dragRef(dropRef(ref));
 
+    function handleDeleteCard(card){
+        axios.delete('http://localhost:5000/cards/'+card._id)
+        .then(res=>{
+            console.log(card);
+        })
+        .catch(e =>{
+            console.log(e);
+        })
+    }
+
         return (
             <div className="Container" ref={ref} isDragging={isDragging}>
                <div className="card cards">
                 <div className="card-body">
-                    <h4 className="card-title">{data.labels}</h4>
-                    <p className="card-text">{data.content}</p>
-                    
+                    <h4 className="card-title">{data.companyName}</h4>
+                    <p className="card-text">{data.jobTitle}</p>
+                    <Button type="button" variant="warning" size="sm" onClick={()=>handleDeleteCard(data)}>delete</Button>
+
                 </div>
                 </div>
             </div>
