@@ -40,10 +40,12 @@ export default class AddCardModal extends Component {
       note: this.state.note,
     }]}
 
-    axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',card)
-    .then(res => console.log(res.data))
-    .catch(e => console.log(e));
+    this.props.addCard(card);
+    // axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',card)
+    // .then(res => console.log(res.data))
+    // .catch(e => console.log(e));
 
+  
     console.log('new card  added:')
     console.log(card);
     

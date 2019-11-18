@@ -23,8 +23,8 @@ export default function Card ({data, index, listIndex}){
             accept:'CARD',
             hover(item, monitor){
 
-                console.log(item.index);
-                console.log(data.index);
+                //console.log(item.index);
+                //console.log(data.index);
 
                 const draggedListIndex = item.listIndex;
                 const targetListIndex = listIndex;

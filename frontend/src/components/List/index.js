@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import { Modal, Button, ButtonToolbar} from 'react-bootstrap';
 import Card from '../Card';
 import AddCardModal from '../AddCardModal';
@@ -6,9 +6,9 @@ import AddCardModal from '../AddCardModal';
 
 
 
-export default function List ({data, index: listIndex}){
+export default function List ({data, index: listIndex, addCard}){
  
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
    
     return (
         <div className="Container list">
@@ -23,6 +23,7 @@ export default function List ({data, index: listIndex}){
                         <AddCardModal
                              show = {modalShow}
                              onHide= {()=>setModalShow(false)}
+                             addCard={addCard}
                         />
                     </ButtonToolbar>)
                 }
@@ -30,7 +31,7 @@ export default function List ({data, index: listIndex}){
             </header>
             <ul>
                 
-                {data.cards.map((card, index) => <Card key={card.id} listIndex= {listIndex} index={index} data={card}/>)}
+                {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} />)}
             </ul>
                 
         </div>
