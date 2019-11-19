@@ -18,6 +18,7 @@ export default function Board(){
 
    
    const [lists,setLists] = useState([]);
+   const [firstList,setFirstList] = useState([]);
    //const [lists, listsDispatch] = useReducer(listsReducer, [])
 
   
@@ -31,7 +32,6 @@ export default function Board(){
            setLists(data);
            console.log(data[0].cards)
            }
-         
        })
      .catch(e =>{
        console.log(e)
@@ -39,26 +39,26 @@ export default function Board(){
        
     },[])
 
+   
+    const addCard = async (newCard)=>{
+        try{
+           const card = await axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',newCard)
+            const newList = [...lists];
+            if(card.data){
+                newList[0].cards.push(card.data)               
+            }
+            setLists(newList)
 
-//     const addCard = (newCard)=>{
-//         console.log('addCard')
-//      axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',newCard)
-//  .then(res => console.log(res.data))
-//  .catch(e => console.log(e));
-//  }
-
-    const addCard = (newCard)=>{
-        console.log('addCard')
-    axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',newCard)
-    .then(res => {
-        console.log(res.data);
-
-    })
-    .catch(e => console.log(e));
+        } catch(e){
+            console.log("error")
+        }
     }
 
-   
 
+
+    
+
+   
 
    
     function move(fromList, toList, from, to){

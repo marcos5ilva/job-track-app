@@ -34,14 +34,15 @@ router.route('/add/:id').patch(async (req, res)=>{
             await newCardUpdated.save();
             
             list.cards.push(newCardUpdated);  
+            await list.save();
+            res.json(newCardUpdated);
         }));
 
 
-        await list.save();
-        res.send(list);
+        
     }catch(e){
 
-        return res.status(400).send({Error: 'Error creating new card'})
+        return res.status(400).send({Error: 'Error creating new card'+e.message})
     
     }
 })
