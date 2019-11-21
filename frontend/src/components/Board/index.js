@@ -54,6 +54,27 @@ export default function Board(){
         }
     }
 
+    const removeCard = async (card)=>{
+        try{
+            axios.delete('http://localhost:5000/cards/'+card._id)
+            
+            console.log('card', card.list)
+            lists.forEach(list => {
+                console.log(list)
+                if(list._id === card.list){
+                    list.cards = list.cards.filter(cardList => {
+                        return cardList._id !== card._id;
+                    })
+                }
+            })
+
+            console.log('newLists', [...lists])
+            setLists([...lists]);
+        } catch(e){
+            console.log(e);
+        }
+    }
+
 
 
     
@@ -78,7 +99,7 @@ export default function Board(){
         <BoardContext.Provider value={{lists, move}}>
            
              <div className="Container board">
-                {lists.map((list, index) =><List key={list.title} index = {index}  data={list} addCard={addCard}/>)}
+                {lists.map((list, index) =><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard}/>)}
             </div>
         </BoardContext.Provider>
        

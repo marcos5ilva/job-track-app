@@ -17,13 +17,8 @@ router.route('/').get(async (req, res)=>{
 
 router.route('/add/:id').patch(async (req, res)=>{
     try{
-        console.log('Creating new card')
-        console.log('List param.id '+req.params.id);
         const {cards} = req.body;
-        const list = await Lists.findByIdAndUpdate(req.params.id, { new: true, runValidators: true }) 
-        console.log('List param.id '+req.params.id);
-        console.log('list to be updated: '+ list);
-        console.log(list);
+        const list = await Lists.findByIdAndUpdate(req.params.id, { new: true, runValidators: true });
         if(!list){
             return res.status(404).send()
         }
@@ -51,7 +46,7 @@ router.route('/:id').delete(async (req, res)=>{
     try{
        
        await Cards.findByIdAndDelete(req.params.id);
-       res.send('Card deleted');
+       res.send(req.data);
 
     }catch(e){
         res.status(400).send({Error: 'Error removing card'})

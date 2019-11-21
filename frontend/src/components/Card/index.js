@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-export default function Card ({data, index, listIndex}){
+export default function Card ({data, index, listIndex, removeCard}){
 
     
         const ref = useRef();
@@ -59,15 +59,15 @@ export default function Card ({data, index, listIndex}){
 
     dragRef(dropRef(ref));
 
-    function handleDeleteCard(card){
-        axios.delete('http://localhost:5000/cards/'+card._id)
-        .then(res=>{
-            console.log(card);
-        })
-        .catch(e =>{
-            console.log(e);
-        })
-    }
+    // function handleDeleteCard(card){
+    //     axios.delete('http://localhost:5000/cards/'+card._id)
+    //     .then(res=>{
+    //         console.log(card);
+    //     })
+    //     .catch(e =>{
+    //         console.log(e);
+    //     })
+    // }
 
         return (
             <div className="Container" ref={ref} isDragging={isDragging}>
@@ -75,7 +75,7 @@ export default function Card ({data, index, listIndex}){
                 <div className="card-body">
                     <h4 className="card-title">{data.companyName}</h4>
                     <p className="card-text">{data.jobTitle}</p>
-                    <Button type="button" variant="warning" size="sm" onClick={()=>handleDeleteCard(data)}>delete</Button>
+                    <Button type="button" variant="warning" size="sm" onClick={()=>removeCard(data)}>delete</Button>
 
                 </div>
                 </div>
