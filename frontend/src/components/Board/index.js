@@ -60,7 +60,6 @@ export default function Board(){
             
             console.log('card', card.list)
             lists.forEach(list => {
-                console.log(list)
                 if(list._id === card.list){
                     list.cards = list.cards.filter(cardList => {
                         return cardList._id !== card._id;
@@ -68,11 +67,14 @@ export default function Board(){
                 }
             })
 
-            console.log('newLists', [...lists])
             setLists([...lists]);
         } catch(e){
             console.log(e);
         }
+    }
+
+    const editCard = (card)=>{
+        console.log('editCard');
     }
 
 
@@ -89,7 +91,6 @@ export default function Board(){
 
         setLists(produce(lists, draft =>{
             const dragged = draft[fromList].cards[from];
-
              draft[fromList].cards.splice(from, 1);
              draft[toList].cards.splice(to, 0,dragged);
          }))
@@ -99,7 +100,7 @@ export default function Board(){
         <BoardContext.Provider value={{lists, move}}>
            
              <div className="Container board">
-                {lists.map((list, index) =><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard}/>)}
+                {lists.map((list, index) =><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard}/>)}
             </div>
         </BoardContext.Provider>
        

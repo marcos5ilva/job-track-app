@@ -1,17 +1,19 @@
-import React, { useRef, useContext} from 'react';
+import React, { useRef, useContext,useState} from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import BoardContext from '../Board/context';
 import { ButtonToolbar, Button } from 'react-bootstrap';
 import axios from 'axios';
+import EditCardModal from '../EditCardModal';
 
 
 
 
-export default function Card ({data, index, listIndex, removeCard}){
+export default function Card ({data, index, listIndex, removeCard, editCard}){
 
     
         const ref = useRef();
         const { move } = useContext(BoardContext);
+        const [modalShow, setModalShow] = useState(false);
 
         const [{ isDragging }, dragRef] = useDrag({
             item: {type: 'CARD', index, listIndex},
@@ -52,6 +54,9 @@ export default function Card ({data, index, listIndex, removeCard}){
                 move(draggedListIndex, targetListIndex,  draggedIndex, targetIndex);
                 item.index = targetIndex;
                 item.listIndex = targetListIndex;
+                console.log('item', item)
+
+                console.log('item.listIndex', item.listIndex)
 
             },
 
@@ -75,8 +80,14 @@ export default function Card ({data, index, listIndex, removeCard}){
                 <div className="card-body">
                     <h4 className="card-title">{data.companyName}</h4>
                     <p className="card-text">{data.jobTitle}</p>
+                    <Button type="button" variant="success" size="sm"  onClick = {()=> setModalShow(true)}>edit</Button>
                     <Button type="button" variant="warning" size="sm" onClick={()=>removeCard(data)}>delete</Button>
-
+                    <EditCardModal
+                             show = {modalShow}
+                             onHide= {()=>setModalShow(false)}
+                             card = {data}
+                             editCard={editCard}
+                        />
                 </div>
                 </div>
             </div>
