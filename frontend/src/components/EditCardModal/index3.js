@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Modal, Button, Tab, Row, Col, Nav, Form} from 'react-bootstrap';
+import {Modal, Button, Form} from 'react-bootstrap';
 import axios from 'axios';
 
 export default class EditCardModal extends Component {
@@ -64,59 +64,13 @@ export default class EditCardModal extends Component {
            <form onSubmit = {this.onSubmit}>
            <Modal.Header closeButton>
              <Modal.Title id="contained-modal-title-vcenter">
-             {this.state.companyName}'s job application
+               Edit Card
              </Modal.Title>
            </Modal.Header>
            <Modal.Body>
-        
-             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                <Row>
-                    <Col sm={3}>
-                        <Nav variant="pills" className="flex-column">
-                        <Nav.Item>
-                        <Nav.Link eventKey="JobInfo">Job Info</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                        <Nav.Link eventKey="CompanyInfo">Company Info</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                        <Nav.Link eventKey="Notes">Notes</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                        <Nav.Link eventKey="InterviewPractice">Interview Practice</Nav.Link>
-                        </Nav.Item>
-                        </Nav>
-                    </Col>
-                    <Col sm={9}>
-                    <Tab.Content>
-                        <Tab.Pane eventKey="JobInfo">
-                          <p>Job Info</p>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="CompanyInfo">
-                          <p>Second tab</p>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="Notes">
-                          <p>Notes</p>
-                          <div className="form-group row"> 
-                            <div className ="col-10">
-                              <textarea rows="10" cols="80"  className="form-control" 
-                                name="note" 
-                                id="note" 
-                                placeholder="Enter job annotation" 
-                                value = {this.state.note}
-                                onChange = {this.onChangeHandler}
-                              />
-                             </div>
-                          </div>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="InterviewPractice">
-                          <p>Interview Practice</p>
-                        </Tab.Pane>
-                    </Tab.Content>
-                    </Col>
-                </Row>
-            </Tab.Container>
-              {/* <div className="form-group row">
+             <h4>job application</h4>
+             
+              <div className="form-group row">
                 <div className ="col-10">
                   <input type="text" className="form-control" 
                     name="companyName" 
@@ -162,7 +116,7 @@ export default class EditCardModal extends Component {
                   />
                 </div>
               </div>
-              <div className="form-group row"> 
+              <div className="form-group row">
                 <div className ="col-10">
                   <textarea rows="4" cols="50"  className="form-control" 
                     name="note" 
@@ -172,7 +126,7 @@ export default class EditCardModal extends Component {
                     onChange = {this.onChangeHandler}
                   />
                 </div>
-              </div>*/}
+              </div>
             
            </Modal.Body>
            <Modal.Footer>

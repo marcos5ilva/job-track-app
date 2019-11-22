@@ -1,0 +1,91 @@
+Date : 2019-11-21 18:49:51
+Directory : /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app
+Total : 42 files,  27730 codes, 137 comments, 426 blanks, all 28293 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          6 |     26,244 |          0 |          6 |     26,250 |
+| JavaScript |         30 |      1,273 |        134 |        354 |      1,761 |
+| CSS        |          2 |        108 |          3 |         22 |        133 |
+| HTTP       |          1 |         46 |          0 |          7 |         53 |
+| Markdown   |          1 |         37 |          0 |         32 |         69 |
+| HTML       |          1 |         15 |          0 |          4 |         19 |
+| XML        |          1 |          7 |          0 |          1 |          8 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                       | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                          |         42 |     27,730 |        137 |        426 |     28,293 |
+| backend                                                                                                    |         13 |      1,434 |         64 |        167 |      1,665 |
+| backend/database                                                                                           |          1 |          3 |          4 |          5 |         12 |
+| backend/models                                                                                             |          4 |        129 |         31 |         43 |        203 |
+| backend/routes                                                                                             |          4 |        190 |         28 |        100 |        318 |
+| frontend                                                                                                   |         26 |     14,148 |         71 |        224 |     14,443 |
+| frontend/public                                                                                            |          2 |         30 |          0 |          5 |         35 |
+| frontend/src                                                                                               |         22 |      1,039 |         71 |        217 |      1,327 |
+| frontend/src/components                                                                                    |         10 |        609 |         31 |        143 |        783 |
+| frontend/src/components/AddCardModal                                                                       |          1 |        117 |          3 |         19 |        139 |
+| frontend/src/components/Board                                                                              |          2 |         74 |          3 |         37 |        114 |
+| frontend/src/components/Card                                                                               |          1 |         62 |         11 |         23 |         96 |
+| frontend/src/components/EditCardModal                                                                      |          1 |        117 |          3 |         20 |        140 |
+| frontend/src/components/List                                                                               |          1 |         29 |          0 |         12 |         41 |
+| frontend/src/components/PrivateRoute                                                                       |          1 |         15 |          0 |          1 |         16 |
+| frontend/src/components/SignIn                                                                             |          1 |         77 |         10 |         15 |        102 |
+| frontend/src/components/SignUp                                                                             |          1 |         97 |          1 |         11 |        109 |
+| frontend/src/pages                                                                                         |          2 |         15 |          0 |          8 |         23 |
+| frontend/src/services                                                                                      |          1 |        150 |          0 |          7 |        157 |
+| playground                                                                                                 |          1 |          3 |          2 |          2 |          7 |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                   | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/README.md                                      | Markdown   |         37 |          0 |         32 |         69 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/database/index.js                      | JavaScript |          3 |          4 |          5 |         12 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/models/board.model.js                  | JavaScript |         13 |         24 |         13 |         50 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/models/cards.model.js                  | JavaScript |         28 |          5 |         10 |         43 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/models/lists.model.js                  | JavaScript |         22 |          1 |          6 |         29 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/models/user.model.js                   | JavaScript |         66 |          1 |         14 |         81 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/package-lock.json                      | JSON       |      1,020 |          0 |          1 |      1,021 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/package.json                           | JSON       |         22 |          0 |          1 |         23 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/request.rest                           | HTTP       |         46 |          0 |          7 |         53 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/routes/board.js                        | JavaScript |         62 |         17 |         33 |        112 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/routes/cards.js                        | JavaScript |         39 |          0 |         18 |         57 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/routes/lists.js                        | JavaScript |         41 |         10 |         26 |         77 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/routes/users.js                        | JavaScript |         48 |          1 |         23 |         72 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/backend/server.js                              | JavaScript |         24 |          1 |         10 |         35 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/package-lock.json                     | JSON       |     13,037 |          0 |          1 |     13,038 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/package.json                          | JSON       |         42 |          0 |          1 |         43 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/public/index.html                     | HTML       |         15 |          0 |          4 |         19 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/public/manifest.json                  | JSON       |         15 |          0 |          1 |         16 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/App.css                           | CSS        |         96 |          3 |         20 |        119 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/App.js                            | JavaScript |         25 |          1 |         12 |         38 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/App.test.js                       | JavaScript |          8 |          0 |          2 |         10 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/auth.js                           | JavaScript |          3 |          0 |          0 |          3 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/AddCardModal/index.js  | JavaScript |        117 |          3 |         19 |        139 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/Board/context.js       | JavaScript |          3 |          0 |          2 |          5 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/Board/index.js         | JavaScript |         71 |          3 |         35 |        109 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/Card/index.js          | JavaScript |         62 |         11 |         23 |         96 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/EditCardModal/index.js | JavaScript |        117 |          3 |         20 |        140 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/List/index.js          | JavaScript |         29 |          0 |         12 |         41 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/Navbar.js              | JavaScript |         21 |          0 |          5 |         26 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/PrivateRoute/index.js  | JavaScript |         15 |          0 |          1 |         16 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/SignIn/index.js        | JavaScript |         77 |         10 |         15 |        102 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/components/SignUp/index.js        | JavaScript |         97 |          1 |         11 |        109 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/index.css                         | CSS        |         12 |          0 |          2 |         14 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/index.js                          | JavaScript |          5 |          5 |          3 |         13 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/logo.svg                          | XML        |          7 |          0 |          1 |          8 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/pages/AboutPage.js                | JavaScript |          7 |          0 |          3 |         10 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/pages/HomePage.js                 | JavaScript |          8 |          0 |          5 |         13 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/routes.js                         | JavaScript |         17 |          0 |          6 |         23 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/serviceWorker.js                  | JavaScript |         92 |         31 |         13 |        136 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/frontend/src/services/api.js                   | JavaScript |        150 |          0 |          7 |        157 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/package-lock.json                              | JSON       |     12,108 |          0 |          1 |     12,109 |
+| /media/marcos/01D414A38F79DCA0/LDSBC/CAPSTONE/job-track-app/playground/es6.js                              | JavaScript |          3 |          2 |          2 |          7 |
+| Total                                                                                                      |            |     27,730 |        137 |        426 |     28,293 |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
