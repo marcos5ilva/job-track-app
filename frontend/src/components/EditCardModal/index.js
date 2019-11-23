@@ -18,6 +18,7 @@ export default class EditCardModal extends Component {
       salary: this.props.card.salary,
       jobPostURL: this.props.card.jobTitle,
       note: this.props.card.note,
+      companyNote: this.props.card.companyNote,
 
     }
   
@@ -39,6 +40,7 @@ export default class EditCardModal extends Component {
       salary: this.state.salary,
       jobPostURL: this.state.jobPostURL,
       note: this.state.note,
+      companyNote: this.state.companyNote
     }]}
 
     this.props.editCard(card);
@@ -90,10 +92,81 @@ export default class EditCardModal extends Component {
                     <Col sm={9}>
                     <Tab.Content>
                         <Tab.Pane eventKey="JobInfo">
-                          <p>Job Info</p>
+                        <div className="form-group row">
+                          <div className ="col-10">
+                            <input type="text" className="form-control" 
+                              name="companyName" 
+                              id="companyName" 
+                              placeholder="Enter comapany's name" 
+                              required
+                              value = {this.state.companyName}
+                              onChange = {this.onChangeHandler}
+                            />
+                          </div>
+                        </div>
+                        <div className="form-group row">
+                          <div className ="col-10">
+                            <input type="text" className="form-control"
+                              name="jobTitle" 
+                              id="jobTitle" 
+                              placeholder="Enter Job Title" 
+                              required
+                              value = {this.state.jobTitle}
+                              onChange = {this.onChangeHandler}
+                            />
+                          </div>
+                        </div>
+                        <div className="form-group row">
+                          <div className ="col-10">
+                            <input type="text" className="form-control" 
+                              name="salary" 
+                              id="salary" 
+                              placeholder="Enter salary" 
+                              value = {this.state.salary}
+                              onChange = {this.onChangeHandler}
+                            />
+                          </div>
+                        </div>
+                        <div className="form-group row">
+                          <div className ="col-10">
+                            <input type="text" className="form-control" 
+                              name="jobPostURL" 
+                              id="jobPostURL" 
+                              placeholder="Enter job post URL" 
+                              value = {this.state.jobPostURL}
+                              onChange = {this.onChangeHandler}
+                            />
+                          </div>
+                        </div>
+                        <div className='row'>
+                          <p><a target ="blank" href={this.state.jobPostURL}>Accessing job post link</a></p>
+                        </div>
+                        <p>Notes</p>
+                          <div className="form-group row"> 
+                            <div className ="col-10">
+                              <textarea rows="10" cols="80"  className="form-control" 
+                                name="note" 
+                                id="note" 
+                                placeholder="Enter job annotation" 
+                                value = {this.state.note}
+                                onChange = {this.onChangeHandler}
+                              />
+                             </div>
+                          </div>
                         </Tab.Pane>
                         <Tab.Pane eventKey="CompanyInfo">
-                          <p>Second tab</p>
+                            <p>Insert {this.state.companyName}'s key info summary</p>
+                            <div className="form-group row"> 
+                              <div className ="col-10">
+                                <textarea rows="10" cols="80"  className="form-control" 
+                                  name="companyNote" 
+                                  id="companyNote" 
+                                  placeholder="Insert company's key info summary" 
+                                  value = {this.state.companyNote}
+                                  onChange = {this.onChangeHandler}
+                                />
+                              </div>
+                            </div>
                         </Tab.Pane>
                         <Tab.Pane eventKey="Notes">
                           <p>Notes</p>

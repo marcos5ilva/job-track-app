@@ -22,6 +22,9 @@ cardsSchema = new Schema ({
     note:{
         type: String,
     },
+    companyNote:{
+        type: String,
+    },
     labels:String,
 
     //  board:{
