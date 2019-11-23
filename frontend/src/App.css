@@ -3,10 +3,12 @@
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  
 }
 
 html, body, #root {
   height: 100%;
+  background-color: #E5EAED;
 }
 
 
@@ -42,12 +44,56 @@ html, body, #root {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 320px;
+  
+  
+}
+
+.navbar{
+  background-color: #11324c;
+  
+}
+
+.navbar-brand{
+  
+  background: url(/img/jobnoteLogoBrand.png);
+  background-repeat: no-repeat;
+  
+  left: 15px;
+}
+
+.navbar-dark .navbar-nav .nav.link{
+  color: #B37A3F;
+}
+
+.nabar-text{
+  position: absolute;
+  width: 100%;
+  left: 30px;
+  text-align: center;
+  margin: auto;
+  padding-top: 10px;
 }
 
 .board{
   display: flex;
   padding: 30px 0;
   height: calc(100%-80px);
+}
+
+img-logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  
+}
+
+.card.signUPsignInCard{
+  background: #B37A3F;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+  box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
 }
 
 .verticalAlignment{
@@ -57,6 +103,17 @@ html, body, #root {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.btn.btn-primary{
+  background-color: #11324c;
+  border-color: #194e77;
+  color: white;
+  
+}
+
+i.fa{
+  color: #11324c; 
 }
 
 .signUPsignInCard{

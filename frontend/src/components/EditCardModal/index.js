@@ -71,7 +71,7 @@ export default class EditCardModal extends Component {
            </Modal.Header>
            <Modal.Body>
         
-             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+             <Tab.Container id="left-tabs-example" defaultActiveKey="JobInfo">
                 <Row>
                     <Col sm={3}>
                         <Nav variant="pills" className="flex-column">
@@ -249,7 +249,7 @@ export default class EditCardModal extends Component {
             
            </Modal.Body>
            <Modal.Footer>
-             <Button type="submit" onClick={this.props.onHide}>Save job</Button>
+             <Button type="submit" onClick={this.props.onHide}>Update job</Button>
            </Modal.Footer>
            </form>
          </Modal>

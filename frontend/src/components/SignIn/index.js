@@ -86,7 +86,7 @@ export default class SignIn  extends Component{
                                 </div>
                                 <div className="form-group row ">
                                     <div className="col-12">
-                                        <input type="submit" value="Sign In" className="form-control btn btn-primary " id="signInButton" 
+                                        <input type="submit" value="Sign In" className="form-control btn btn-primary" id="signInButton" 
                                         onClick={(e) => this.onSubmit(e)}
                                         />
                                     </div>

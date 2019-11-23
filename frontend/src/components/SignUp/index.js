@@ -84,7 +84,7 @@ export default class SignUp  extends Component{
                                     </div>
                                 </div>
                                 <div className="form-group row">
-                                    <i className="fa fa-lock fa-2x col-2" aria-hidden="true"></i>
+                                    <i className="fa fa-lock fa-2x col-2 fa-icon-blue" aria-hidden="true"></i>
                                     <div className="col-10">
                                         <input type="password" className="form-control " name ="password" id="passwordInput" placeholder="Password"
                                         required
