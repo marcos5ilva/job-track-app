@@ -20,11 +20,11 @@ export default class NavbarPages  extends Component{
                 </div>
             </nav>*/
             <Navbar bg="dark" >
-                <Navbar.Brand href="/" >
+                <Navbar.Brand href="/" id="textBrand" >
                         <img
                         src="/img/jobnoteLogoBrand.png"
                         alt ="Job Note Logo"
-                        />Job Note
+                        />JOBnote
                         </Navbar.Brand>
                 <Nav >
                     <Nav.Item className="justify-content-end">

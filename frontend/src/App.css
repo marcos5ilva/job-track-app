@@ -121,6 +121,14 @@ p.app-title2{
    width: 100%; 
 }
 
+#textBrand{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+  padding-left: 15px;
+  color: #E5EAED;
+}
+
 
 
 .card.signUPsignInCard{
