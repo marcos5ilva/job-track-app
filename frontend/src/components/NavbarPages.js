@@ -19,19 +19,19 @@ export default class NavbarPages  extends Component{
                     </ul>
                 </div>
             </nav>*/
-            <Navbar bg="dark" >
+            <Navbar  >
                 <Navbar.Brand href="/" id="textBrand" >
                         <img
                         src="/img/jobnoteLogoBrand.png"
                         alt ="Job Note Logo"
-                        />JOBnote
+                        /> JOBnote
                         </Navbar.Brand>
-                <Nav >
-                    <Nav.Item className="justify-content-end">
+                <Nav className="text-right" >
+                    <Nav.Item className="justify-content-end ">
                         <Nav.Link href="/signin">login</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/signin">sign up</Nav.Link>
+                        <Nav.Link href="/signup">sign up</Nav.Link>
                     </Nav.Item>
                     
                 </Nav>
