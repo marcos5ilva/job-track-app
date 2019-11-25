@@ -5,6 +5,7 @@ import BoardContext from './context';
 
 import produce from 'immer';
 import axios from 'axios';
+import { Container } from 'react-bootstrap';
 
 
 //const data = loadLists();
@@ -110,9 +111,9 @@ export default function Board(){
     return (
         <BoardContext.Provider value={{lists, move}}>
            
-             <div className="Container board">
+             <Container className="Container board">
                 {lists.map((list, index) =><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard}/>)}
-            </div>
+            </Container>
         </BoardContext.Provider>
        
     ) 

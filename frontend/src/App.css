@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -53,22 +55,19 @@ html, body, #root {
   
 }
 
-.navbar-brand{
-  
-  background: url(/img/jobnoteLogoBrand.png);
-  background-repeat: no-repeat;
-  
-  left: 15px;
+.navbar-expand {
+  flex-flow: row nowrap;
+  justify-content: space-between!important;
 }
 
 .navbar-dark .navbar-nav .nav.link{
   color: #B37A3F;
 }
 
-.nabar-text{
+.navbar-text{
   position: absolute;
   width: 100%;
-  left: 30px;
+  left: 50px;
   text-align: center;
   margin: auto;
   padding-top: 10px;
@@ -80,20 +79,56 @@ html, body, #root {
   height: calc(100%-80px);
 }
 
-img-logo{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+img.imgLogo.img-fluid{
+
+transform: translate(0%, 50%);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+-moz-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
   
 }
+
+.text-center.home-title.row {
+  font-family: 'Roboto', sans-serif;
+  
+  font-size: 2.1em;
+  position: absolute; 
+   top: 100px; 
+   left:0; 
+   width: 100%;
+   
+}
+
+p.app-title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 7em;
+
+  position: absolute; 
+   top: 125px; 
+   left: auto; 
+   width: 100%; 
+}
+
+p.app-title2{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 3.5em;
+
+  position: absolute; 
+   top: 250px; 
+   left: 55px; 
+   width: 100%; 
+}
+
+
 
 .card.signUPsignInCard{
   background: #B37A3F;
 
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
-  box-shadow: 10px 10px 5px 0px rgba(17,50,76,1);
+  -webkit-box-shadow: 10px 10px 31px -4px rgba(17,50,76,0.4);
+-moz-box-shadow: 10px 10px 31px -4px rgba(17,50,76,0.4);
+box-shadow: 10px 10px 31px -4px rgba(17,50,76,0.4);
 }
 
 .verticalAlignment{

@@ -11,7 +11,7 @@ import {DndProvider} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 //Import components
 import Routes from './routes';
-import Navbar from './components/Navbar'
+import NavbarPages from './components/NavbarPages'
 
 
 
@@ -23,7 +23,7 @@ export default class App extends React.Component {
         <DndProvider backend={HTML5Backend}>
           <Router>
             <div className="App">
-              <Navbar />
+              <NavbarPages />
               <Routes />
             </div>
           </Router >

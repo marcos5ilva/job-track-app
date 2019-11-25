@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import { Modal, Button, ButtonToolbar} from 'react-bootstrap';
+import { Row, Col, Modal, Button, ButtonToolbar} from 'react-bootstrap';
 import Card from '../Card';
 import AddCardModal from '../AddCardModal';
 
@@ -12,6 +12,8 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
    
     return (
         <div className="Container list">
+        <Row>
+            <Col lg={12}>
             <header>
                 <h2>{data.title}</h2>
                 {data.creatable && (
@@ -33,7 +35,8 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
                 
                 {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard}/>)}
             </ul>
-                
+            </Col>
+        </Row>        
         </div>
     );
     
