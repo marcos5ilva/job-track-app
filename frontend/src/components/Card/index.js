@@ -75,13 +75,13 @@ export default function Card ({data, index, listIndex, removeCard, editCard}){
     // }
 
         return (
-            <div className="Container" ref={ref} isDragging={isDragging}>
+            <div className="Container " ref={ref} isDragging={isDragging}>
                <div className="card cards">
                 <div className="card-body">
                     <h4 className="card-title">{data.companyName}</h4>
-                    <p className="card-text">{data.jobTitle}</p>
-                    <Button type="button" variant="success" size="sm"  onClick = {()=> setModalShow(true)}>edit</Button>
-                    <Button type="button" variant="warning" size="sm" onClick={()=>removeCard(data)}>delete</Button>
+                    {/*<p className="card-text">{data.jobTitle}</p>*/}
+                    <Button type="button" variant="success" size="sm"  onClick = {()=> setModalShow(true)}><i class="fa fa-angle-double-right" aria-hidden="true"></i></Button>
+                    <Button type="button" variant="warning" size="sm" onClick={()=>removeCard(data)}><i class="fa fa-trash" aria-hidden="true"></i></Button>
                     <EditCardModal
                              show = {modalShow}
                              onHide= {()=>setModalShow(false)}

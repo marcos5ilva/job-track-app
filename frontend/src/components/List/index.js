@@ -12,14 +12,13 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
    
     return (
         <div className="Container list">
-        <Row>
-            <Col lg={12}>
+       
             <header>
-                <h2>{data.title}</h2>
+                <h2 className="list-title">{data.title}</h2>
                 {data.creatable && (
                     <ButtonToolbar>
                         
-                        <Button variant="primary" size="lg" onClick = {()=> setModalShow(true)} block>
+                        <Button size="lg" block onClick = {()=> setModalShow(true)}>
                            <i className="fa fa-plus" aria-hidden="true"></i>
                         </Button>
                         <AddCardModal
@@ -35,8 +34,7 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
                 
                 {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard}/>)}
             </ul>
-            </Col>
-        </Row>        
+               
         </div>
     );
     

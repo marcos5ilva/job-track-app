@@ -164,15 +164,12 @@ box-shadow: 10px 10px 31px -4px rgba(17,50,76,0.4);
   transform: translateY(-50%);
 }
 
-.btn.btn-primary{
-  background-color: #11324c;
-  border-color: #194e77;
-  color: white;
-  
-}
+
+
+
 
 i.fa{
-  color: #11324c; 
+  color: #E5EAED; 
 }
 
 .signUPsignInCard{
@@ -193,34 +190,68 @@ i.fa{
 
 }
 
-.list button{
-  width: 42px;
-  height:42px;
-  border-radius: 18px;
-  background: #3b5bfd;
-  border: 0;
-  cursor: pointer;
+#signInButton{
+  background-color: #11324c;
+  border-color: #194e77;
+  color: #E5EAED;
 }
+
+#signUPButton{
+  background-color: #11324c;
+  border-color: #194e77;
+  color: #E5EAED;
+}
+
+.btn.btn-primary.btn-block.btn-lg{
+  background-color: #11324c;
+  border-color: #194e77;
+  color:  #E5EAED;
+  height: 40px;
+  width: 250px;
+ 
+}
+
 
 .list ul{
   margin-top: 30px;
+}
+
+h2.list-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  color: #11324c;
+}
+
+.nav-link.active{
+  color:  #E5EAED !important;
+  background-color:  #11324c!important;
+}
+
+.btn.btn-warning.btn-sm{
+  color:  #E5EAED !important;
+  background-color:  #11324c!important;
+  border-color:  #11324c!important;
+  margin-left: 45%;
+
 }
 
 .cards{
   position: relative;
   background:#fff;
   border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
   box-shadow: 0 1px 4px 0 rgba(192, 208,230, 0.8);
   border-top: 20px solid rgba(230, 236, 245, 0.4);
   cursor: grab;
+  max-width: 200px;
+  max-height: 200px;
 
 }
 
 .cards p{
-  font-weight: 500;
-  line-height: 20px;
+  font-weight: 400;
+  line-height: 14px;
 }
 
 

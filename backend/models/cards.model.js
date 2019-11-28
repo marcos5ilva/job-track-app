@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-cardsSchema = new Schema ({
+const cardsSchema = new Schema ({
 
     companyName: {
         type: String,
@@ -25,6 +25,10 @@ cardsSchema = new Schema ({
     companyNote:{
         type: String,
     },
+     interviewQuestions:[{
+         type: mongoose.Schema.Types.ObjectId,
+         ref: 'interviewQuestions'
+     }],
     labels:String,
 
     //  board:{

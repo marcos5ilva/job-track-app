@@ -8,7 +8,9 @@ router.route('/').get(async (req, res)=>{
     try{
         console.log('Linting board')
         const board = await Board.find().populate({path: 'lists', model:'Lists',populate: {
-            path:'cards', model:'Cards'
+            path:'cards', model:'Cards', populate :{
+                path:'interviewQuestions', model: 'InterviewQuestions'
+            }
         }});
         return res.send({board});
     } catch(e){

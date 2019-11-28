@@ -5,7 +5,7 @@ import BoardContext from './context';
 
 import produce from 'immer';
 import axios from 'axios';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 //const data = loadLists();
@@ -112,7 +112,9 @@ export default function Board(){
         <BoardContext.Provider value={{lists, move}}>
            
              <Container className="Container board">
-                {lists.map((list, index) =><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard}/>)}
+             <Row className="text-center">              
+{lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard}/> </Col>)}
+</Row>
             </Container>
         </BoardContext.Provider>
        

@@ -183,69 +183,14 @@ export default class EditCardModal extends Component {
                           </div>
                         </Tab.Pane>
                         <Tab.Pane eventKey="InterviewPractice">
-                          <p>Interview Practice</p>
+                          <Button size="lg" block>
+                           <i className="fa fa-plus" aria-hidden="true"></i></Button>
                         </Tab.Pane>
                     </Tab.Content>
                     </Col>
                 </Row>
             </Tab.Container>
-              {/* <div className="form-group row">
-                <div className ="col-10">
-                  <input type="text" className="form-control" 
-                    name="companyName" 
-                    id="companyName" 
-                    placeholder="Enter comapany's name" 
-                    required
-                    value = {this.state.companyName}
-                    onChange = {this.onChangeHandler}
-                  />
-                </div>
-              </div>
-              <div className="form-group row">
-                <div className ="col-10">
-                  <input type="text" className="form-control"
-                    name="jobTitle" 
-                    id="jobTitle" 
-                    placeholder="Enter Job Title" 
-                    required
-                    value = {this.state.jobTitle}
-                    onChange = {this.onChangeHandler}
-                  />
-                </div>
-              </div>
-              <div className="form-group row">
-                <div className ="col-10">
-                  <input type="text" className="form-control" 
-                    name="salary" 
-                    id="salary" 
-                    placeholder="Enter salary" 
-                    value = {this.state.salary}
-                    onChange = {this.onChangeHandler}
-                  />
-                </div>
-              </div>
-              <div className="form-group row">
-                <div className ="col-10">
-                  <input type="text" className="form-control" 
-                    name="jobPostURL" 
-                    id="jobPostURL" 
-                    placeholder="Enter job post URL" 
-                    value = {this.state.jobPostURL}
-                    onChange = {this.onChangeHandler}
-                  />
-                </div>
-              </div>
-              <div className="form-group row"> 
-                <div className ="col-10">
-                  <textarea rows="4" cols="50"  className="form-control" 
-                    name="note" 
-                    id="note" 
-                    placeholder="Enter job annotation" 
-                    value = {this.state.note}
-                    onChange = {this.onChangeHandler}
-                  />
-                </div>
-              </div>*/}
+              
             
            </Modal.Body>
            <Modal.Footer>
