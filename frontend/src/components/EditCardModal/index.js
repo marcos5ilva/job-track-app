@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Modal, Button, Tab, Row, Col, Nav, Form} from 'react-bootstrap';
+import {Modal, Button, Tab, Row, Col, Nav,Accordion, Card, Form} from 'react-bootstrap';
 import axios from 'axios';
 
 export default class EditCardModal extends Component {
@@ -189,9 +189,27 @@ export default class EditCardModal extends Component {
                           <Button size="lg" block>
                            <i className="fa fa-plus" aria-hidden="true"></i></Button>
                            <ul>
-                            {this.state.interviewQuestions.map((item, index)=><><li key={index}>{item.question}</li><li key={index}>{item.answer}</li></>)}
+                           <>
+                            {/*this.state.interviewQuestions.map((item, index)=><><li key={index}>{item.question}</li><li key={index}>{item.answer}</li></>)*/}
+                            {this.state.interviewQuestions.map((item, index)=>
+                            
+                              <Accordion  key={index}>
+                              <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey={index}>
+                                {item.question}
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey={index}>
+                                  <Card.Body>{item.answer}</Card.Body>
+                                </Accordion.Collapse>
+                              </Card>
+                              
+                            </Accordion>
+                            
+                            )}
+
+                        </>
                            </ul>
-                           {console.log(this.state.interviewQuestions[0])}
+                           
                         </Tab.Pane>
                     </Tab.Content>
                     </Col>
