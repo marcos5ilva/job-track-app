@@ -5,7 +5,7 @@ let Cards = require('../models/cards.model');
 
 router.route('/').get(async (req, res)=>{
     try{
-        const cards = await Cards.find();
+        const cards = await Cards.find().populate({path: 'interviewQuestions', model: 'InterviewQuestions'});
         return res.send({cards});
     } catch(e){
         return res.status(400).send({error : 'Error loading cards'});

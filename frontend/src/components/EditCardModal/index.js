@@ -19,6 +19,7 @@ export default class EditCardModal extends Component {
       jobPostURL: this.props.card.jobTitle,
       note: this.props.card.note,
       companyNote: this.props.card.companyNote,
+      interviewQuestions: this.props.card.interviewQuestions,
 
     }
   
@@ -55,6 +56,8 @@ export default class EditCardModal extends Component {
   }
   
   render(){
+
+    console.log('interviewQuestions',this.state.interviewQuestions)
 
     return (
          <Modal
@@ -185,6 +188,10 @@ export default class EditCardModal extends Component {
                         <Tab.Pane eventKey="InterviewPractice">
                           <Button size="lg" block>
                            <i className="fa fa-plus" aria-hidden="true"></i></Button>
+                           <ul>
+                            {this.state.interviewQuestions.map((item, index)=><><li key={index}>{item.question}</li><li key={index}>{item.answer}</li></>)}
+                           </ul>
+                           {console.log(this.state.interviewQuestions[0])}
                         </Tab.Pane>
                     </Tab.Content>
                     </Col>
