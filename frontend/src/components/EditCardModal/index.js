@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Modal, Button, Tab, Row, Col, Nav,Accordion, Card, Form} from 'react-bootstrap';
-import axios from 'axios';
+import addQuestionModal from '../AddQuestionModal';
+import AddQuestionModal from '../AddQuestionModal';
 
 export default class EditCardModal extends Component {
    
@@ -13,6 +14,7 @@ export default class EditCardModal extends Component {
 
     this.state={
       editCardModalShow: false,
+      addQuestion:this.props.addQuestion,
       companyName: this.props.card.companyName,
       jobTitle: this.props.card.jobTitle,
       salary: this.props.card.salary,
@@ -20,7 +22,7 @@ export default class EditCardModal extends Component {
       note: this.props.card.note,
       companyNote: this.props.card.companyNote,
       interviewQuestions: this.props.card.interviewQuestions,
-
+      modalShow : false,
     }
   
   }
@@ -54,6 +56,8 @@ export default class EditCardModal extends Component {
     console.log(card);
     
   }
+
+  
   
   render(){
 
@@ -186,11 +190,15 @@ export default class EditCardModal extends Component {
                           </div>
                         </Tab.Pane>
                         <Tab.Pane eventKey="InterviewPractice">
-                          <Button size="lg" block>
-                           <i className="fa fa-plus" aria-hidden="true"></i></Button>
+                          <Button size="sm" block onClick={()=>{this.setState({modalShow: true}); console.log('AddQuestion button clicked', this.modalShow)}}> Add a question</Button>
+                          <AddQuestionModal
+                             show = {this.state.modalShow}
+                             onHide= {()=>this.setState({modalShow:false})}
+                             card = {this.props.data}
+                             addQuestion={this.props.addQuestion}
+                        />
                            <ul>
                            <>
-                            {/*this.state.interviewQuestions.map((item, index)=><><li key={index}>{item.question}</li><li key={index}>{item.answer}</li></>)*/}
                             {this.state.interviewQuestions.map((item, index)=>
                             
                               <Accordion  key={index}>

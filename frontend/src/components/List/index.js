@@ -18,7 +18,7 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
                 {data.creatable && (
                     <ButtonToolbar>
                         
-                        <Button size="lg" block onClick = {()=> setModalShow(true)}>
+                        <Button size="sm" block onClick = {()=> setModalShow(true)}>
                            <i className="fa fa-plus" aria-hidden="true"></i>
                         </Button>
                         <AddCardModal

@@ -202,7 +202,7 @@ i.fa{
   color: #E5EAED;
 }
 
-.btn.btn-primary.btn-block.btn-lg{
+.btn.btn-primary.btn-block.btn-sm{
   background-color: #11324c;
   border-color: #194e77;
   color:  #E5EAED;
@@ -222,9 +222,25 @@ h2.list-title{
   color: #11324c;
 }
 
+
+
+.modal-header{
+  color:  whitesmoke !important;
+  background-color:    #11324c!important;
+}
+
+.modal-header button{
+  color:  #E5EAED;
+}
+
+.modal-body button{
+
+  background-color:    #11324c!important;
+  margin-bottom: 15px;
+}
 .nav-link.active{
   color:  #E5EAED !important;
-  background-color:  #11324c!important;
+  background-color:   #B37A3F!important;
 }
 
 .btn.btn-warning.btn-sm{
@@ -233,6 +249,11 @@ h2.list-title{
   border-color:  #11324c!important;
   margin-left: 45%;
 
+}
+
+.accordion>.card .card-header {
+  background-color: #f7c395;
+  margin-bottom: 5px!important;
 }
 
 .cards{

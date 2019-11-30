@@ -85,8 +85,23 @@ export default function Board(){
              setLists(newList)
  
          } catch(e){
-             console.log("error")
+             console.log("error", e)
          }
+    }
+
+    const addQuestion = async(questionUpdate) =>{
+        try{
+            const question = await axios.patch('http://localhost:5000/interviewquestions/add/'+questionUpdate.card._id, questionUpdate)
+            const newList = [...lists];
+            console.log("lists questonUpdate ", lists)
+            if(!question.data){
+                //newList[0].cards.push(card.data)
+            }
+            setLists(newList);
+
+        }catch(e){
+           console.log("error", e)
+        }
     }
 
 
@@ -113,7 +128,7 @@ export default function Board(){
            
              <Container className="Container board">
              <Row className="text-center">              
-{lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard}/> </Col>)}
+{lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addQuestion={addQuestion}/> </Col>)}
 </Row>
             </Container>
         </BoardContext.Provider>
