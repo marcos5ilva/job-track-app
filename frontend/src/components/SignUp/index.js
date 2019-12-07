@@ -34,7 +34,11 @@ export default class SignUp  extends Component{
         }
 
         axios.post('http://localhost:5000/users/add', user)
-            .then( res => console.log(res.data))
+            .then( res =>{
+                if(res.data.status === 'created'){
+                    this.props.handleSuccessfulAuth()
+                }
+            } )
             .catch(e => console.log(e));
 
             this.setState({

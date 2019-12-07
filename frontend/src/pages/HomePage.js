@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Image, Container} from 'react-bootstrap'
 
-const HomePage = ()=>(
+const HomePage = (props)=>(
     <React.Fragment>
         <Container>
          <Row className="text-center home-title" >

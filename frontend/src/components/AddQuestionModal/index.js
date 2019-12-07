@@ -3,7 +3,7 @@ import {Modal, Button, Form} from 'react-bootstrap';
 
 
 export default class AddQuestionModal extends Component {
-   
+  
   constructor(props){
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -36,15 +36,8 @@ export default class AddQuestionModal extends Component {
       
     }]
 
-   // this.props.addCard(card);
-    // axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',card)
-    // .then(res => console.log(res.data))
-    // .catch(e => console.log(e));
-
-  
-    //console.log('new question  added:')
-    //console.log(card);
-    
+    this.props.addQuestion(interviewQuestion);
+   
   }
   
   render(){
@@ -54,7 +47,7 @@ export default class AddQuestionModal extends Component {
            {...this.props}
            size="lg"
            aria-labelledby="contained-modal-title-vcenter"
-           centered
+           
          >
            <form onSubmit = {this.onSubmit}>
            <Modal.Header closeButton>
@@ -67,7 +60,7 @@ export default class AddQuestionModal extends Component {
              
               <div className="form-group row">
                 <div className ="col-10">
-                  <input type="text" className="form-control" 
+                  <textarea rows="5" cols="80"  className="form-control" 
                     name="question" 
                     id="question" 
                     placeholder="Enter interview question" 
@@ -79,7 +72,7 @@ export default class AddQuestionModal extends Component {
               </div>
               <div className="form-group row">
                 <div className ="col-10">
-                  <input type="text" className="form-control"
+                  <textarea rows="10" cols="80" className="form-control"
                     name="answer" 
                     id="answer" 
                     placeholder="Enter answer" 

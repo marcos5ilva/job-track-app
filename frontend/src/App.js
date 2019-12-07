@@ -18,13 +18,36 @@ import NavbarPages from './components/NavbarPages'
 
 export default class App extends React.Component {
   
+  constructor(){
+    super();
+
+    this.handleSuccessfullAuth = this.handleSuccessfullAuth.bind(this);
+
+    this.state ={
+      loggedInStatus : false,
+      user: {}
+    }
+  }
+  
+  handleSuccessfullAuth() {
+    this.setState({loggedInStatus: true});
+    
+  }
+
+  handleLogout() {
+    this.setState({loggedInStatus: false});
+    
+  }
+  
+  
+  
   render (){
       return (
         <DndProvider backend={HTML5Backend}>
           <Router>
             <div className="App">
-              <NavbarPages />
-              <Routes />
+              <NavbarPages loggedInStatus ={this.state.loggedInStatus} handleLogout = {this.handleLogout} />
+              <Routes  loggedInStatus ={this.state.loggedInStatus} handleSuccessfullAuth={this.handleSuccessfullAuth} />
             </div>
           </Router >
           

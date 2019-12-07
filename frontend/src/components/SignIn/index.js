@@ -4,12 +4,14 @@ import axios from 'axios';
 export default class SignIn  extends Component{
     constructor(props){
         super(props);
-
+        console.log('signin props ', props)
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeHandler = this.onChangeHandler.bind(this);
+       
             this.state = {
             email:'',
-            password:'',   
+            password:'',
+            loggedInStatus: false,   
         };
 
 
@@ -32,6 +34,7 @@ export default class SignIn  extends Component{
         });
     }
 
+
     onSubmit(e){
        e.preventDefault();
         console.log(e);
@@ -44,10 +47,11 @@ export default class SignIn  extends Component{
 
        
 
-        axios.post('http://localhost:5000/users/signin', user)
+        axios.post('http://localhost:5000/users/signin', user, {data: this.props.handleSuccessfullAuth})
             .then( res => {
                 console.log(res.data);
-                //this.setState({ user: response.data});
+                //this.setState({ user: res.data});
+                this.props.handleSuccessfullAuth();
                 this.props.history.push('/board');
               
             })
@@ -56,6 +60,8 @@ export default class SignIn  extends Component{
 
             })
     }
+
+ 
 
     render(){
         return (

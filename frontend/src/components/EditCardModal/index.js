@@ -7,14 +7,14 @@ export default class EditCardModal extends Component {
    
   constructor(props){
     super(props);
+    console.log('propsAddQuestion ', props)
     this.onSubmit = this.onSubmit.bind(this);
     this.onChangeHandler = this.onChangeHandler.bind(this);
-    
-    
+    //this.props.addQuestion();
 
     this.state={
       editCardModalShow: false,
-      addQuestion:this.props.addQuestion,
+      
       companyName: this.props.card.companyName,
       jobTitle: this.props.card.jobTitle,
       salary: this.props.card.salary,
@@ -24,10 +24,12 @@ export default class EditCardModal extends Component {
       interviewQuestions: this.props.card.interviewQuestions,
       modalShow : false,
     }
+
+
   
   }
 
- 
+  
 
   onChangeHandler(e){
     this.setState({
@@ -37,7 +39,7 @@ export default class EditCardModal extends Component {
 
   onSubmit(e){
     e.preventDefault();
-    const card = { cards :[{
+     const card = { cards :[{
       companyName: this.state.companyName,
       jobTitle: this.state.jobTitle,
       salary: this.state.salary,
@@ -47,9 +49,7 @@ export default class EditCardModal extends Component {
     }]}
 
     this.props.editCard(card);
-    // axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',card)
-    // .then(res => console.log(res.data))
-    // .catch(e => console.log(e));
+   
 
   
     console.log('new card  added:')
@@ -62,7 +62,7 @@ export default class EditCardModal extends Component {
   render(){
 
     console.log('interviewQuestions',this.state.interviewQuestions)
-
+    console.log('EditCardModal props ', this.props);
     return (
          <Modal
            {...this.props}

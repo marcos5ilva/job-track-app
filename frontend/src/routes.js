@@ -8,12 +8,26 @@ import SignIn from './components/SignIn';
 import Board from './components/Board';
 
 
-const Routes = ()=>(
+const Routes = ({loggedInStatus, handleSuccessfullAuth})=>(
+            
             <Switch>
-                <Route path="/" component = {HomePage} exact/>
+                
+                <Route 
+                exact
+                path={"/"} 
+                render = {() =>(
+                    <HomePage  loggedInStatus = {loggedInStatus}/>
+                )} />
                 <Route path="/signup" component = {SignUp}/>
-                <Route path="/signin" component = {SignIn}/>
-                <Route path="/board" component = {Board} exact/>
+                <Route
+                 path={"/signin"}
+                 render={(props)=>(
+                     <SignIn {...props} loggedInStatus = {loggedInStatus} handleSuccessfullAuth={handleSuccessfullAuth}/>
+                 )} />
+                <Route path={"/board"}
+                render ={(props)=>(
+                    <Board {...props} />
+                )} exact/>
                 <Route path="/about" component = {AboutPage} />    
             </Switch> 
              

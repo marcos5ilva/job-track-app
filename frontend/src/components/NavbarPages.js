@@ -3,22 +3,30 @@ import { Link} from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 
 export default class NavbarPages  extends Component{
-  
+ 
+    constructor(props){
+        super(props);
+        //this.handleSuccessfullAuth = this.handleSuccessfullAuth.bind(this);
+        //this.handleLogoutClick = this.handleLogoutClick.bind(this);
+        this.state = {loggedInStatus: false};  
+      }
+    
+    //   handleSuccessfullAuth(data) {
+    //     this.setState({loggedInStatus: true});
+    //     console.log('onClick');
+    //   }
+    
+    //   handleLogoutClick() {
+    //     this.setState({loggedInStatus: false});
+        
+    //   }
+    
     render(){
+
+        //const isLoggedIn = this.props.isLoggedIn;
+        //console.log(isLoggedIn)
         return(
-            /* <nav className = "navbar navbar-dark  navbar-expand-lg ">
-                /*<Link to="/" className="navbar-brand">Job note</Link>
-                <div className="collapse navbar-collapse">
-                    <ul className="navbar-nav ml-auto">
-                        <li className="navbar-item">
-                        <Link to="/signin" className="nav-link">login</Link>
-                        </li>
-                        <li className="navbar-item">
-                        <Link to="/signup" className="nav-link">sign up</Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>*/
+      
             <Navbar  >
                 <Navbar.Brand href="/" id="textBrand" >
                         <img
@@ -26,15 +34,22 @@ export default class NavbarPages  extends Component{
                         alt ="Job Note Logo"
                         /> JOBnote
                         </Navbar.Brand>
-                <Nav className="text-right" >
-                    <Nav.Item className="justify-content-end ">
-                        <Nav.Link href="/signin">login</Nav.Link>
+                {!this.props.loggedInStatus?(<Nav className="text-right" >
+                    <Nav.Item className="justify-content-end " >
+                        <Nav.Link  href="/signin" eventKey="1" >login</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/signup">sign up</Nav.Link>
+                        <Nav.Link href="/signup"  eventKey="2">sign up</Nav.Link>
                     </Nav.Item>
                     
-                </Nav>
+                </Nav>):(
+                    <Nav className="text-right" >
+                    <Nav.Item className="justify-content-end ">
+                        <Nav.Link href="/" onClick ={this.props.handleLogout}>logout</Nav.Link>
+                    </Nav.Item>
+                    
+                    
+                </Nav>)}
             </Navbar>
         )
     }
