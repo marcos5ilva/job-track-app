@@ -255,7 +255,10 @@ h2.list-title{
   background-color: #f7c395;
   margin-bottom: 5px!important;
 }
-
+.questions{
+  overflow-y: scroll;
+  height: 300px;
+}
 .cards{
   position: relative;
   background:#fff;

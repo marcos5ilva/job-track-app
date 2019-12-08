@@ -6,7 +6,7 @@ import AddCardModal from '../AddCardModal';
 
 
 
-export default function List ({data, index: listIndex, addCard, removeCard, editCard}){
+export default function List ({data, index: listIndex, addCard, removeCard, editCard, addInterviewQuestion}){
  
     const [modalShow, setModalShow] = useState(false);
    
@@ -32,7 +32,7 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
             </header>
             <ul>
                 
-                {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard}/>)}
+                {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard} addInterviewQuestion={addInterviewQuestion}/>)}
             </ul>
                
         </div>

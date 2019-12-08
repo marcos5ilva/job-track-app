@@ -80,7 +80,8 @@ export default function Board(){
             const card = await axios.patch('http://localhost:5000/cards/add/5dc7786edce42e2fa6b761f3',cardUpdate)
              const newList = [...lists];
              if(card.data){
-                 newList[0].cards.push(card.data)               
+                 newList[0].cards.push(card.data) 
+                               
              }
              setLists(newList)
  
@@ -89,6 +90,32 @@ export default function Board(){
          }
     }
 
+    const addInterviewQuestion = async (interviewQuestion, card)=>{
+        console.log('Interview question added', interviewQuestion);
+        console.log('CardID ', card);
+
+        try{
+            const question = await axios.patch('http://localhost:5000/interviewquestions/add/'+card._id, interviewQuestion)
+             console.log('question.data ', question.data);
+             console.log('newList[0].cards.interviewQuestions', lists[0].cards)
+            const newList = [...lists];
+             if(question.data){
+                 console.log('interviewQuestion obj', interviewQuestion)
+                newList.forEach(list => {
+                    if(list._id ===card.list){
+                        list.cards = list.cards.filter(cardList => {
+                            return cardList.interviewQuestions.push({question: interviewQuestion.interviewQuestions[0].question, answer: interviewQuestion.interviewQuestions[0].answer});
+                        })
+                    }
+                })
+                }
+                console.log('newList updated ', newList);
+             setLists(newList);
+        }
+        catch(e){
+            console.log("error", e)
+        }
+    }
     //const addQuestion = async(questionUpdate) =>{
        // console.log('addAQuestion function')
         // try{
@@ -129,7 +156,7 @@ export default function Board(){
            
              <Container className="Container board">
              <Row className="text-center">              
-{lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} /> </Col>)}
+{lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addInterviewQuestion={addInterviewQuestion} /> </Col>)}
 </Row>
             </Container>
         </BoardContext.Provider>

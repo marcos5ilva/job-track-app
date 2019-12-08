@@ -7,14 +7,12 @@ export default class EditCardModal extends Component {
    
   constructor(props){
     super(props);
-    console.log('propsAddQuestion ', props)
+   
     this.onSubmit = this.onSubmit.bind(this);
     this.onChangeHandler = this.onChangeHandler.bind(this);
-    //this.props.addQuestion();
 
     this.state={
       editCardModalShow: false,
-      
       companyName: this.props.card.companyName,
       jobTitle: this.props.card.jobTitle,
       salary: this.props.card.salary,
@@ -29,7 +27,7 @@ export default class EditCardModal extends Component {
   
   }
 
-  
+
 
   onChangeHandler(e){
     this.setState({
@@ -50,25 +48,19 @@ export default class EditCardModal extends Component {
 
     this.props.editCard(card);
    
-
-  
-    console.log('new card  added:')
-    console.log(card);
     
   }
 
   
   
   render(){
-
-    console.log('interviewQuestions',this.state.interviewQuestions)
-    console.log('EditCardModal props ', this.props);
     return (
          <Modal
            {...this.props}
            size="lg"
            aria-labelledby="contained-modal-title-vcenter"
            centered
+          
          >
            <form onSubmit = {this.onSubmit}>
            <Modal.Header closeButton>
@@ -190,15 +182,15 @@ export default class EditCardModal extends Component {
                           </div>
                         </Tab.Pane>
                         <Tab.Pane eventKey="InterviewPractice">
-                          <Button size="sm" block onClick={()=>{this.setState({modalShow: true}); console.log('AddQuestion button clicked', this.modalShow)}}> Add a question</Button>
+                          <Button size="sm" block onClick={()=>{this.setState({modalShow: true})}}> Add a question</Button>
                           <AddQuestionModal
                              show = {this.state.modalShow}
                              onHide= {()=>this.setState({modalShow:false})}
-                             card = {this.props.data}
-                             addQuestion={this.props.addQuestion}
+                             card = {this.props.card}
+                             addQuestion={this.props.addInterviewQuestion}
                         />
                            <ul>
-                           <>
+                           <div className="questions">
                             {this.state.interviewQuestions.map((item, index)=>
                             
                               <Accordion  key={index}>
@@ -215,7 +207,7 @@ export default class EditCardModal extends Component {
                             
                             )}
 
-                        </>
+                        </div>
                            </ul>
                            
                         </Tab.Pane>

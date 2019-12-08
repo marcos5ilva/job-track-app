@@ -14,8 +14,6 @@ export default class AddQuestionModal extends Component {
       addQuestionModalShow: false,
       question: '',
       answer:'',
-      
-
     }
   
   }
@@ -30,14 +28,16 @@ export default class AddQuestionModal extends Component {
 
   onSubmit(e){
     e.preventDefault();
-    const interviewQuestion = [{
+    const interviewQuestions = [{
       question: this.state.question,
       answer: this.state.answer,
       
-    }]
+    }];
 
-    this.props.addQuestion(interviewQuestion);
-   
+
+    this.props.addQuestion({interviewQuestions}, this.props.card);
+    this.setState({ question: '',
+    answer:'',})
   }
   
   render(){
@@ -47,7 +47,8 @@ export default class AddQuestionModal extends Component {
            {...this.props}
            size="lg"
            aria-labelledby="contained-modal-title-vcenter"
-           
+          
+           autoFocus="true"
          >
            <form onSubmit = {this.onSubmit}>
            <Modal.Header closeButton>

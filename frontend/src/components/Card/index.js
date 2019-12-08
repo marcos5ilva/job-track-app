@@ -8,7 +8,7 @@ import EditCardModal from '../EditCardModal';
 
 
 
-export default function Card ({data, index, listIndex, removeCard, editCard, addQuestion}){
+export default function Card ({data, index, listIndex, removeCard, editCard, addInterviewQuestion}){
 
     
         const ref = useRef();
@@ -87,7 +87,7 @@ export default function Card ({data, index, listIndex, removeCard, editCard, add
                              onHide= {()=>setModalShow(false)}
                              card = {data}
                              editCard={editCard}
-                             addQuestion={addQuestion}
+                             addInterviewQuestion={addInterviewQuestion}
                         />
                 </div>
                 </div>
