@@ -1,15 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
+  "name": "JOBnote",
+  "short_name" : "JOBnote",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation":"portrait",
+  "background_color": "#E5EAED",
+   "theme_color":"#11324c",
+   "icons": [
+       {
+          "src":"jobnote-icon-96x96.png",
+          "sizes":"96x9",
+          "type":"image/png" 
+       },
+       {
+        "src":"/jobnote-icon-144x144.png",
+        "sizes":"144x144",
+        "type":"image/png" 
+     }
+   ]
 }

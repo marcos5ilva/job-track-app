@@ -155,9 +155,9 @@ export default function Board(){
         <BoardContext.Provider value={{lists, move}}>
            
              <Container className="Container board">
-             <Row className="text-center">              
-{lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addInterviewQuestion={addInterviewQuestion} /> </Col>)}
-</Row>
+                <Row className="text-center">              
+                    {lists.map((list, index) =><Col lg={4} sm={12}><List key={list.title} index = {index}  data={list} addCard={addCard} removeCard={removeCard} editCard={editCard} addInterviewQuestion={addInterviewQuestion} /> </Col>)}
+                </Row>
             </Container>
         </BoardContext.Provider>
        

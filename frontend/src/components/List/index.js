@@ -11,12 +11,12 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
     const [modalShow, setModalShow] = useState(false);
    
     return (
-        <div className="Container list">
+        <>
        
             <header>
                 <h2 className="list-title">{data.title}</h2>
                 {data.creatable && (
-                    <ButtonToolbar>
+                    <>
                         
                         <Button size="sm" block onClick = {()=> setModalShow(true)}>
                            <i className="fa fa-plus" aria-hidden="true"></i>
@@ -26,7 +26,7 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
                              onHide= {()=>setModalShow(false)}
                              addCard={addCard}
                         />
-                    </ButtonToolbar>)
+                   </> )
                 }
                     
             </header>
@@ -35,7 +35,7 @@ export default function List ({data, index: listIndex, addCard, removeCard, edit
                 {data.cards.map((card, index) => <Card key={card._id} listIndex= {listIndex} index={index} data={card} removeCard={removeCard} editCard ={editCard} addInterviewQuestion={addInterviewQuestion}/>)}
             </ul>
                
-        </div>
+        </>
     );
     
 }

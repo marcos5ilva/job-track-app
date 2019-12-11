@@ -35,3 +35,11 @@ app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)
 })
 
+//Service worker config
+// app.get("/service-worker.js", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "public", "service-worker.js"));
+//   });
+//   app.get("*", function response(req, res) {
+//     res.sendFile(path.join(__dirname, "public", "index.html"));
+//   });
+

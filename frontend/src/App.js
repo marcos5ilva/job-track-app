@@ -13,8 +13,14 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import Routes from './routes';
 import NavbarPages from './components/NavbarPages'
 
-
-
+//import * as serviceWorker from './serviceWorker';
+//serviceWorker.register('serviceWorker.js');
+  // if('serviceWorker' in navigator){
+  //   navigator.serviceWorker.register('serviceWorker.js')
+  //   .then(function(){
+  //     console.log('SW registered')
+  //   })
+  // };
 
 export default class App extends React.Component {
   
