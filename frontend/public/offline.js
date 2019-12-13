@@ -32,7 +32,7 @@ self.addEventListener('install', function(event){
           '/static/js/1.chunk.js',
           '/static/js/bundle.js',
           
-          
+          '/font',
           
           'https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap'
           
